@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title | default: site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+</head>
+<body>
+  <nav class="site-nav">
+    <a class="logo" href="{{ '/' | relative_url }}"><span>ruuk</span>-lang</a>
+    <div class="nav-links">
+      <a href="{{ '/blog' | relative_url }}">blog</a>
+      <a href="https://github.com/ruuk-lang">github</a>
+    </div>
+  </nav>
+  <main>
+    {{ content }}
+  </main>
+</body>
+</html>

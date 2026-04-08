@@ -1,3 +1,4 @@
-title: The Ruuk Programming Language
-description: Ruuk is a statically typed, functional language
-theme: jekyll-theme-cayman
+title: Ruuk
+description: A language designed around cognitive science.
+plugins:
+  - jekyll-relative-links
