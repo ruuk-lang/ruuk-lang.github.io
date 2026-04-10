@@ -62,6 +62,7 @@ a:hover { color: var(--text); }
 .hero h1 em { font-style: normal; color: var(--accent-light); }
 
 .hero p { font-size: 16px; color: var(--muted); max-width: 560px; }
+.pronunciation { font-size: 12px !important; color: var(--dim) !important; font-style: italic; margin-bottom: 20px !important; }
 .hero-sub { margin-top: 14px; font-size: 14px !important; color: var(--dim) !important; }
 
 .code-sample {

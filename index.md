@@ -6,7 +6,8 @@ title: Ruuk
 <div class="hero">
   <div class="eyebrow">a language designed around how humans reason</div>
   <h1>Close enough to read.<br>Precise enough to<br><em>enforce.</em></h1>
-  <p>Ruuk is a statically typed functional language whose syntax is built from the structural vocabulary domain experts and developers already share — prepositions for roles, named concepts for outcomes, transitions for state. The gap between what a domain means and what the code says is smaller than in any mainstream language.</p>
+  <p class="pronunciation">pronounced <em>rook</em> — like the bird, or the chess piece</p>
+  <p>Ruuk is a statically typed functional language in the ML tradition — extended with first-class operations, named outcomes, projections, and state machines designed to close the gap between domain model and code.</p>
   <p class="hero-sub">Code this close to the domain is faster to review, harder to misread, and — because LLMs are language models — better for AI collaboration too. The same design that makes ruuk readable makes it precise enough for the compiler to enforce exhaustive outcome handling, valid state transitions, and complete field accounting.</p>
 </div>
 
