@@ -6,7 +6,7 @@ title: Ruuk
 <div class="hero">
   <div class="eyebrow">a language designed around how humans reason</div>
   <h1>Close enough to read.<br>Precise enough to<br><em>enforce.</em></h1>
-  <p>Ruuk is a statically typed functional language whose syntax is grounded in cognitive linguistics — the structures humans naturally use to reason about events, roles, and outcomes. Parameter roles are prepositions. Outcomes are named domain concepts. State transitions read like state diagrams.</p>
+  <p>Ruuk is a statically typed functional language whose syntax is built from the structural vocabulary domain experts and developers already share — prepositions for roles, named concepts for outcomes, transitions for state. The gap between what a domain means and what the code says is smaller than in any mainstream language.</p>
   <p class="hero-sub">Code this close to the domain is faster to review, harder to misread, and — because LLMs are language models — better for AI collaboration too. The same design that makes ruuk readable makes it precise enough for the compiler to enforce exhaustive outcome handling, valid state transitions, and complete field accounting.</p>
 </div>
 
@@ -115,22 +115,43 @@ title: Ruuk
   </div>
 </div>
 
-<div class="features">
-  <div class="feature">
-    <div class="feature-label">design principle</div>
-    <h3>Code that reads like the domain it models</h3>
-    <p>Ruuk's syntax uses structures the brain already has. Prepositions name what each argument does. Outcomes are domain vocabulary, not error codes. The cold read is faster because the gap between the domain model and the code is smaller — for humans and language models alike.</p>
+<div class="feature-sections">
+
+  <div class="feature-section">
+    <div class="feature-section-eyebrow">design principle</div>
+    <h2>Code that reads like the domain it models</h2>
+    <p>Ruuk borrows directly from the structural vocabulary domain experts and developers already use. Prepositions express roles — <em>transferFunds from account to reserve via gateway</em>. Named concepts express outcomes — <em>InsuranceDenied</em>, <em>ContraindicationDetected</em> — not error codes. State transitions read like the protocol descriptions domain experts already write. These aren't new conventions to learn; they're the ones already in use.</p>
+    <p>This makes cold reads faster: the reviewer handed AI-generated code, the fifth developer to maintain a system, the architect verifying a design — all spend less time reconstructing intent because less intent was lost in translation.</p>
+    <div class="agent-callout">
+      <strong>For AI agents:</strong> richer semantic metadata at every declaration site. Parameter roles give agents structured information about what each argument <em>does</em> — not just its type but its function in the operation. Agents generate code that fits the semantic frame rather than inferring roles from variable names.
+    </div>
   </div>
-  <div class="feature">
-    <div class="feature-label">outcomes</div>
-    <h3>Named failure modes, not exceptions</h3>
-    <p>Operations declare every domain-meaningful result — not just success and error, but <em>AlreadyExists</em>, <em>InsufficientInventory</em>, <em>CarrierUnavailable</em>. The compiler rejects any call site that leaves one unhandled.</p>
+
+  <div class="feature-section">
+    <div class="feature-section-eyebrow">outcomes</div>
+    <h2>Every failure mode named. Every case enforced.</h2>
+    <p>Operations declare all their outcomes — not a binary Ok/Err, but every domain-meaningful result: <em>AlreadyExists</em>, <em>InsufficientInventory</em>, <em>InsuranceDenied</em>. The compiler rejects any call site that leaves one unhandled. The design decision — which outcomes exist and what they mean — is syntactic, not buried in implementation or held in someone's memory.</p>
+    <p>This is the difference between a system that handles the cases someone thought of on the day they wrote it, and a system where the compiler prevents the gap from existing at all.</p>
+    <div class="agent-callout">
+      <strong>For AI agents:</strong> conventional languages require running integration tests to discover a missing error path — seconds of latency, noisy output to parse. Ruuk's compiler rejects missing outcome handlers in milliseconds with a precise diagnostic: <em>"outcome AlreadyExists unhandled at line 42."</em> The agent's search space is pruned before any code runs.
+    </div>
   </div>
-  <div class="feature">
-    <div class="feature-label">developer · compiler · AI · domain expert</div>
-    <h3>Four parties, one shared artifact</h3>
-    <p>You define the structure. AI fills the implementation. The compiler verifies the contract. And the clinician, compliance officer, or analyst can read the outcome declarations and confirm they match the spec — without reading implementation code.</p>
+
+  <div class="feature-section">
+    <div class="feature-section-eyebrow">developer · compiler · AI · domain expert</div>
+    <h2>The contract layer anyone can read</h2>
+    <p>Ruuk separates declaration from implementation. The <em>op</em> declaration names every outcome. The <em>resource</em> declaration names every valid state. Type projections name which fields cross which trust boundary. These encode design intent — and they are written to be readable without implementation knowledge.</p>
+    <p>A clinician can review an <em>op Prescribe</em> declaration and confirm it captures the protocol. A compliance officer can read outcome sets and verify regulatory coverage. An architect can review the full interface layer without reading a single function body. The compiler then enforces that whatever AI generates must honor those declarations.</p>
   </div>
+
+  <div class="feature-section">
+    <div class="feature-section-eyebrow">for AI agents</div>
+    <h2>Declared invariants, not discovered ones</h2>
+    <p>In a conventional language, an agent discovers invariants by running code and observing failures. It learns that <em>createUser</em> can fail with <em>AlreadyExists</em> by hitting that case in a test. The feedback loop is: generate → test (seconds to minutes) → parse noisy output → infer the constraint → fix.</p>
+    <p>In ruuk, invariants are declared — in operation outcome sets, state machine transitions, projection rules — and the compiler enforces them statically. The agent doesn't need to discover that <em>AlreadyExists</em> is a possible outcome; it's in the declaration. The feedback loop is: generate → compile (milliseconds) → structured diagnostic with exact location and constraint → fix.</p>
+    <p>This is what a better agent environment looks like: not a smarter model, but a tighter feedback loop that makes any model converge faster toward structurally correct code.</p>
+  </div>
+
 </div>
 
 <div class="status">

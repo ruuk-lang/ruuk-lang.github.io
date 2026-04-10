@@ -176,6 +176,60 @@ a:hover { color: var(--text); }
 .feature h3 { font-size: 15px; font-weight: 500; margin-bottom: 10px; }
 .feature p { font-size: 13px; color: var(--dim); }
 
+.feature-sections {
+  border-top: 0.5px solid var(--border);
+  margin-top: 64px;
+}
+
+.feature-section {
+  padding: 52px 48px;
+  border-bottom: 0.5px solid var(--border);
+  max-width: 720px;
+}
+
+.feature-section-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-dim);
+  margin-bottom: 14px;
+}
+
+.feature-section h2 {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.25;
+  margin-bottom: 18px;
+}
+
+.feature-section p {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.75;
+  margin-bottom: 12px;
+  max-width: 620px;
+}
+
+.feature-section p:last-of-type { margin-bottom: 0; }
+
+.agent-callout {
+  margin-top: 24px;
+  padding: 14px 18px;
+  background: var(--bg2);
+  border: 0.5px solid var(--border);
+  border-left: 2px solid var(--teal);
+  border-radius: 4px;
+  font-size: 13px;
+  color: var(--dim);
+  line-height: 1.7;
+  max-width: 620px;
+}
+
+.agent-callout strong {
+  color: var(--teal);
+  font-weight: 500;
+}
+
 .status {
   padding: 32px 48px;
   border-top: 0.5px solid var(--border);
@@ -211,5 +265,6 @@ a:hover { color: var(--text); }
   .features { grid-template-columns: 1fr; }
   .features-showcase { padding: 32px 20px 0; }
   .problem-section { padding: 32px 20px 0; }
+  .feature-section { padding: 40px 20px; }
   .post-list { padding: 32px 20px 48px; }
 }
