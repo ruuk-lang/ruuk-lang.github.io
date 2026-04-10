@@ -86,6 +86,17 @@ a:hover { color: var(--text); }
 .cm  { color: var(--dimmer); }
 .st  { color: #ef9f27; }
 
+.problem-section {
+  padding: 40px 48px 0;
+  max-width: 680px;
+}
+
+.problem-section p {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
 .features-showcase {
   padding: 48px 48px 0;
 }
@@ -95,41 +106,55 @@ a:hover { color: var(--text); }
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--dimmer);
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .code-block {
   background: var(--bg2);
   border: 0.5px solid var(--border);
   border-radius: 8px;
-  margin-bottom: 16px;
   overflow: hidden;
 }
 
-.code-block-label {
-  font-size: 11px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--accent-dim);
-  padding: 9px 20px;
+.tab-bar {
+  display: flex;
   border-bottom: 0.5px solid var(--border);
+  overflow-x: auto;
 }
 
-.code-block pre {
+.tab-btn {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--dim);
+  cursor: pointer;
+  font-family: ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  margin-bottom: -1px;
+  padding: 10px 18px;
+  text-transform: uppercase;
+  transition: color 0.15s;
+  white-space: nowrap;
+}
+
+.tab-btn:hover { color: var(--muted); }
+
+.tab-btn.active {
+  border-bottom-color: var(--accent);
+  color: var(--accent-light);
+}
+
+.tab-pane { display: none; }
+.tab-pane.active { display: block; }
+
+.tab-pane pre {
   font-family: ui-monospace, monospace;
   font-size: 13px;
   line-height: 1.8;
   color: var(--muted);
-  padding: 20px;
+  padding: 24px 28px;
 }
-
-.showcase-pair {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-.showcase-pair .code-block { margin-bottom: 0; }
 
 .features {
   display: grid;
@@ -184,7 +209,7 @@ a:hover { color: var(--text); }
   .hero h1 { font-size: 28px; }
   .code-sample { margin: 32px 20px 0; }
   .features { grid-template-columns: 1fr; }
-  .showcase-pair { grid-template-columns: 1fr; }
   .features-showcase { padding: 32px 20px 0; }
+  .problem-section { padding: 32px 20px 0; }
   .post-list { padding: 32px 20px 48px; }
 }
