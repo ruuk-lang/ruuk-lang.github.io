@@ -156,20 +156,7 @@ title: Ruuk
 </div>
 
 <div class="status">
-  <p>Ruuk is under active development and not yet available for general use. The posts below track progress and explore the ideas behind the language.</p>
-</div>
-
-<div class="post-list">
-  <div class="post-list-heading">posts</div>
-  {% for post in site.posts %}
-  <a href="{{ post.url }}" style="text-decoration:none">
-    <div class="post-card">
-      <h3>{{ post.title }}</h3>
-      {% if post.excerpt %}<p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>{% endif %}
-      <div class="post-meta">{{ post.date | date: "%B %d, %Y" }}</div>
-    </div>
-  </a>
-  {% endfor %}
+  <p>Ruuk is under active development and not yet available for general use. Follow progress on the <a href="{{ '/blog' | relative_url }}">blog</a>.</p>
 </div>
 
 <script>
