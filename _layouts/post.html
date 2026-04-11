@@ -1,11 +1,43 @@
----
-layout: default
----
-
-<article class="article">
-  <header class="article-header">
-    <div class="article-eyebrow">{{ page.date | date: "%B %d, %Y" }}</div>
-    <h1>{{ page.title }}</h1>
-  </header>
-  {{ content }}
-</article>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="robots" content="noindex" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ page.title }} — {{ site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="{{ '/favicon.svg' | relative_url }}"
+    />
+  </head>
+  <body>
+    <nav class="site-nav">
+      <a class="logo" href="{{ '/' | relative_url }}"
+        >The <span>Ruuk</span> Programming Language</a
+      >
+      <div class="nav-links">
+        <a href="{{ '/blog' | relative_url }}">blog</a>
+        <a href="https://github.com/ruuk-lang">github</a>
+      </div>
+    </nav>
+    <main>
+      <article class="article">
+        <header class="article-header">
+          <div class="article-eyebrow">{{ page.date | date: "%B %d, %Y" }}</div>
+          <h1>{{ page.title }}</h1>
+        </header>
+        {{ content }}
+      </article>
+    </main>
+    <footer class="site-footer">
+      <p>&copy; {{ 'now' | date: "%Y" }} Ruuk. All rights reserved.</p>
+    </footer>
+    <script
+      data-goatcounter="https://ruuk-lang.goatcounter.com/count"
+      async
+      src="//gc.zgo.at/count.js"
+    ></script>
+  </body>
+</html>

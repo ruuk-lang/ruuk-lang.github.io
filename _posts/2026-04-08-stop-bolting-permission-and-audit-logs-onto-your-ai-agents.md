@@ -4,8 +4,6 @@ title: "Stop Bolting Permissions and Audit Logs Onto Your AI Agents"
 date: 2026-04-09
 ---
 
-# Stop Bolting Permissions and Audit Logs Onto Your AI Agents
-
 A comment in a recent discussion about healthcare AI strategy cut through the noise:
 
 > "Stop leading with 'which model?' and start leading with harness architecture, context management, permission systems and auditability."
@@ -162,4 +160,4 @@ That is the harness architecture worth building.
 
 ---
 
-_Ruuk is an open source language designed for correct enterprise processes. Projections, typestate, and sagas are all implemented and available today._
+_Ruuk is an open source language designed for correct enterprise processes. Projections, typestate, and sagas are all implemented and under active development._
