@@ -157,6 +157,9 @@ title: Ruuk
 
 <div class="status">
   <p>Ruuk is under active development and not yet available for general use. Follow progress on the <a href="{{ '/blog' | relative_url }}">blog</a>.</p>
+  <!--
+  <p>Questions or ideas? <a href="https://github.com/ruuk-lang/ruuk/discussions">Join the discussion on GitHub</a> · <a href="https://x.com/TODO">Follow on X</a> · <a href="https://linkedin.com/TODO">LinkedIn</a></p>
+  -->
 </div>
 
 <script>
